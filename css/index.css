@@ -1,0 +1,97 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background: #a6bec0;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5%;
+}
+
+#status-box {
+    text-align: right;
+    font-size: .6em;
+}
+
+#content {
+    width: 50vh;
+    height: 40vh;
+    border: 2px solid gray;
+    border-radius: 5px;
+    overflow: auto;
+    background-color:white;
+}
+
+#ChatTitle{
+    font-Size: 20px; 
+    font-family: monospace;
+    color:white;
+}
+
+#logo{
+    margin: 10px 0;
+    width: 12vh;
+    height: 12vh;
+  }  
+
+#send-box {
+    width: 50vh;
+    margin: 10px;
+    text-align: center;
+}
+
+#send-box input {
+    display: inline-block;
+}
+
+#send-box input.error {
+    border: 1px solid red;
+}
+
+#_button{
+    border:0;
+    text-align: center;
+    background-color:#003C9D;
+    color:#fff;border-radius:10px;
+    height:25px;
+    width:110px;
+    margin-top: 10px;
+    margin-left:10px;
+    white-space:nowrap;
+  }
+
+#upload-btn-wrapper{
+    position: relative;
+    display:inline;
+}
+
+input[name="name"] {
+    width: 15%;
+}
+
+input[name="msg"] {
+    width: 70%;
+}
+
+
+.msg {
+    width: 73%;
+    display: inline-block;
+    padding: 5px 0 5px 10px;
+}
+
+
+.msg > span {
+    width: 25%;
+    display: inline-block;
+}
+
+
+.msg > span::after {
+    color: darkred;
+    content: " say: ";
+}  

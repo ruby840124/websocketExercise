@@ -1,0 +1,25 @@
+{
+  "name": "node-example",
+  "version": "1.0.0",
+  "description": "Hello world Heroku",
+  "scripts": {
+    "start": "node index.js",
+	 "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.3.0",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^4.3.0",
+    "mongoose": "^4.12.4",
+	"socket.io": "latest"
+  },
+  "keywords": [],
+  "author": "Johan",
+  "license": "MIT",
+  "engines": {
+    "node": "10.16.3"
+  }
+}
