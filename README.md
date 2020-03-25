@@ -26,6 +26,6 @@
 1. css調整
 2. 上傳頭貼改名
 
-#demo
+# demo  
 github page只能掛靜態的網頁，只好掛在heroku T T  
 https://web-socket123.herokuapp.com/  
