@@ -9,7 +9,7 @@
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/pc0325.JPG" width="75%" height="75%"> <br>
 
 ▶▶mobile  
-<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mobile0325.JPG" width="75%" height="75%"> <br>
+<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mobile0325.JPG" width="50%" height="50%"> <br>
 
 # 更新進度
 **[3/24]**
