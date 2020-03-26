@@ -2,7 +2,10 @@
 聊天室練習  
 前端:html+js，後端:nodejs  
 待完成:  
-連接資料庫  
+1. 連接資料庫  
+2. 貼圖系統  
+3. 上傳圖片不太穩定(改善)
+
 <br>
 ▶▶PC  
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/pc0326.JPG" width="70%" height="90%"> <br>
