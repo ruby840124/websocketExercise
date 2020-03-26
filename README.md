@@ -11,7 +11,7 @@
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-3.png" width="30%" height="30%"> <br>
 改名選單  
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-2.png" width="30%" height="30%"> <br>
-成功改名成機掰鼠  
+成功改名成87鼠  
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-1.png" width="30%" height="30%"> <br>
 # 更新進度
 **[3/24]**
@@ -30,8 +30,8 @@
 3. 改名，並跳出選單輸入名字
 
 **[3/27] (待完成)**
-1.上傳頭貼
-2.CSS調整
+1.上傳頭貼  
+2.CSS調整  
 
 # demo  
 github page只能掛靜態的網頁，只好掛在heroku T T  
