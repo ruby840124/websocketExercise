@@ -2,9 +2,12 @@
 <html lang="zh-tw">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>My Chatroom</title>
     <link rel="stylesheet" href="../css/index.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var socket = io();
@@ -14,19 +17,23 @@
     <div id="container">
         <label id="ChatTitle">FengChat</label>
         <img id="logo" src="https://i1.wp.com/inews.gtimg.com/newsapp_match/0/6810757084/0" alt="" />
+        <label id="nameBlock" onclick="changeName()"><label id="name">訪客A</label> <i class="fas fa-angle-down"></i></label>
         <div id="status-box">服務狀況:<span id="status">-</span> / <span id="online">0</span> 人 , 在線 ^0^</div>
         <div id="content">
         </div>
+    </div>
+    <div id="msgContainer">
         <div id="send-box">
             <form id="send-form">
-                <input type="text" name="name" id="name" placeholder="暱稱">
-                <input type="text" name="msg" id="msg" placeholder="請輸入文字....">
-                    <input id="_button" type="submit" value="送出">
+                <div id="submitBlock">
+                    <div id="upload-btn-wrapper">
+                        <button id="_button">上傳圖片 <i class="fas fa-rocket"></i></button>
+                        <input id="msgImg" type="file" onChange="upload()" accept="image/*" />
+                    </div>
+                    <input id="_button" type="submit" value="傳送訊息">
+                </div>
+                    <input type="text" name="msg" id="msg" placeholder="請輸入文字....">
             </form>
-            <div id="upload-btn-wrapper">
-                <button id="_button">傳送圖片</button>
-                <input type="file" onChange="upload()" accept="image/*" />
-            </div>
         </div>
     </div>
     <script>
@@ -54,7 +61,7 @@
                 now = "["+now.getHours()+':'+ now.getMinutes()+"]";
                 const div = document.getElementById('content');
                 const msgBox = document.createElement("div")
-                if(d.msg == undefined){
+                if(d.msg == ""){
                     msgtem = "提醒:幹嘛不輸入文字ˋˊ";
                 }
                 msgBox.className = "chatlist";
@@ -62,7 +69,7 @@
                 chatin.className = "chatin";
                 const headShot = document.createElement("img");
                 headShot.className = "headShot";
-                headShot.src = "https://i1.wp.com/inews.gtimg.com/newsapp_match/0/6810757084/0";
+                headShot.src = document.getElementById('logo').src;
                 const name = document.createElement("label");
                 name.className = "name";
                 const msg = document.createElement("span");
@@ -89,60 +96,73 @@
 
             });
 
+            //改名
+            changeName = () => {
+                Swal.fire({
+                    title: 'input your username',
+                    input: 'text',
+                    inputAttributes: {
+                        autocapitalize: 'off'
+                    },
+                    showCancelButton: true,
+                    confirmButtonText: 'submit',
+                    showLoaderOnConfirm: true,
+                    preConfirm: (login) => {
+                        var name = document.getElementById("name");
+                        name.innerText = login ;
+                        }
+                    })
+            }
+
              //上傳圖片
             upload = () => {
-            const sendForm = document.getElementById("send-form");
-            let ok = true;
-            let formData = {};
-            let formChild = sendForm.children;
-            let reader = new FileReader();
-            const file = document.querySelector('input[type=file]').files[0];
-            reader.onloadend = () => {
-                formData["image"] = reader.result;
-                if (ok) {
-                    socket.emit("send", formData);
-                    document.getElementById('msg').value = "";
-                }
-            }
-            reader.readAsDataURL(file);
-            for (let i=0; i< sendForm.childElementCount; i++) {
-                let child = formChild[i];
-                if (child.name !== "") {
-                    var val = child.value;
-                if (val === "" || !val ) {
-                    if(child.id == 'name'){
-                        ok = false;
-                        child.classList.add("error");
+                const sendForm = document.getElementById("send-form");
+                let ok = true;
+                let formData = {};
+                let reader = new FileReader();
+                var msg = document.getElementById('msg');
+                var name= document.getElementById('name');
+                const file = document.getElementById('msgImg').files[0];
+                reader.onloadend = () => {
+                    formData["image"] = reader.result;
+                    if (ok) {
+                        socket.emit("send", formData);
+                        document.getElementById('msg').value = "";
                     }
-                } else {
-                    child.classList.remove("error");
-                    formData[child.name] = val;
-                        }
-                    }   
                 }
+                reader.readAsDataURL(file);
+                msg.classList.remove("error");
+                formData["msg"] = msg.value; 
+                formData["name"] = name.innerText; 
             }
+
+
+            uploadShot = () => {
+                let reader = new FileReader();
+                const file = document.getElementById('headShotUpload').files[0];
+                reader.onloadend = () => {
+                    uploadBoolean = true;
+                    document.getElementById('logo').src = reader.result;
+                }
+                reader.readAsDataURL(file)
+            }
+
 
  
             sendForm.addEventListener("submit", function (e) {
                 e.preventDefault();
- 
                 var ok = true;
                 var formData = {};
-                var formChild = sendForm.children;
- 
-                for (var i=0; i< sendForm.childElementCount; i++) {
-                    var child = formChild[i];
-                    if (child.name !== "") {
-                        var val = child.value;
-                        if (val === "" || !val) {
-                            ok = false;
-                            child.classList.add("error");
-                        } else {
-                            child.classList.remove("error");
-                            formData[child.name] = val;
-                        }
-                    }
+                var name= document.getElementById('name');
+                var msg = document.getElementById('msg');
+                if(msg.value === "" || !msg.value){
+                    ok = false;
+                    msg.classList.add("error");
+                }else{
+                    msg.classList.remove("error");
+                    formData["msg"] = msg.value; 
                 }
+                formData["name"] = name.innerText; 
  
                 if (ok) {
                     document.getElementById('msg').value = "";
