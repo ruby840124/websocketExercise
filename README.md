@@ -8,8 +8,11 @@
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/pc0326.JPG" width="70%" height="90%"> <br>
 
 ▶▶mobile  
-<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mobile0325.JPG" width="30%" height="30%"> <br>
-
+<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-3.png" width="30%" height="30%"> <br>
+改名選單  
+<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-2.png" width="30%" height="30%"> <br>
+成功改名成機掰鼠  
+<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-1.png" width="30%" height="30%"> <br>
 # 更新進度
 **[3/24]**
 1. 基本socket.io功能  
@@ -21,7 +24,7 @@
 1. 上傳圖片功能  
 2. 調整對話框樣式(頭貼+對話框)
 
-**[3/26]**
+**[3/26]**  
 1. css調整(手機)
 2. css調整(PC)
 3. 改名，並跳出選單輸入名字
