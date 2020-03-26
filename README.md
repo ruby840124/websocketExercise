@@ -5,7 +5,7 @@
 連接資料庫  
 <br>
 ▶▶PC  
-<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/pc0326.JPG" width="70%" height="60%"> <br>
+<img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/pc0326.JPG" width="70%" height="90%"> <br>
 
 ▶▶mobile  
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mobile0325.JPG" width="30%" height="30%"> <br>
