@@ -16,24 +16,23 @@
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-2.png" width="30%" height="30%"> <br>
 成功改名成87鼠  
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-1.png" width="30%" height="30%"> <br>
-# 更新進度
+# 更新進度(可看snapshot參考UI更新演變XD)
 **[3/24]**
 1. 基本socket.io功能  
 2. CSS調整  
-3. broadcast聊天室  
-<br>
+3. broadcast聊天室功能  
 
 **[3/25]**
 1. 上傳圖片功能  
-2. 調整對話框樣式(頭貼+對話框)
+2. 調整對話框樣式(新增頭貼+對話框)
 
 **[3/26]**  
 1. css調整(手機)
 2. css調整(PC)
-3. 改名，並跳出選單輸入名字
+3. 改名，並跳出選單輸入暱稱  
 
 **[3/27] (待完成)**  
-1. 將網站更新成react架構  
+1. 將網站更新為react架構  
 2. 將react上傳至heroku，並可運行  
 
 **[3/28] (待完成)**  
