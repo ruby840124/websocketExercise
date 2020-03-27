@@ -16,7 +16,8 @@
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-2.png" width="30%" height="30%"> <br>
 成功改名成87鼠  
 <img src="https://github.com/ruby840124/websocketExercise/blob/master/snapshot/mb0326-1.png" width="30%" height="30%"> <br>
-# 更新進度(可看snapshot參考UI更新演變XD)
+# 更新進度
+(可看snapshot參考UI更新演變XD)  
 **[3/24]**
 1. 基本socket.io功能  
 2. CSS調整  
